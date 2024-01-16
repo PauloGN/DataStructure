@@ -1,7 +1,6 @@
 #include "Stack.h"
 #include<iostream>
 
-
 Stack::Stack()
 {
     size = 0;
@@ -13,13 +12,11 @@ Stack::~Stack()
     delete[] stack_dat;
 }
 
-bool Stack::IsEmpty()
+bool Stack::IsEmpty() const
 {
-    if (size == 0)
-    {
-        return true;
-    }
-    return false;
+    _ASSERT(size >= 0 && size <= MAX_SIZE, "size less then zero memory violetion");
+
+    return size == 0;
 }
 
 bool Stack::IsFull()
@@ -46,6 +43,8 @@ data Stack::Pop()
 
 void Stack::Print()
 {
+    _ASSERT(size >= 0 && size <= MAX_SIZE, "size out of scope then zero memory violetion");
+
     std::cout << "[ ";
     for (size_t i = 0; i < size; i++)
     {

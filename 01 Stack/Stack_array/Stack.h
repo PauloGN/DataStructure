@@ -1,6 +1,6 @@
 #pragma once
 
-const int MAX_SIZE = 25;
+const int MAX_SIZE = 20;
 typedef int data;
 
 class Stack
@@ -8,18 +8,17 @@ class Stack
 private:
 
 	data* stack_dat;
-	int size;
+	unsigned size;
 
 public:
 
 	Stack();
 	~Stack();
 
-	bool IsEmpty();
+	bool IsEmpty() const;
 	bool IsFull();
-	void Push(const data inten);
+	void Push(const data item);
 	data Pop();
 	void Print();
 	int Lengh() const;
 };
-

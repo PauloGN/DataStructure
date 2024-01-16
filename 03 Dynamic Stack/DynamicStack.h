@@ -9,7 +9,6 @@ struct Node
 	Node* next;
 };
 
-
 class DynamicStack
 {
 private:
@@ -28,4 +27,3 @@ public:
 	void Print();
 	int Lengh();
 };
-

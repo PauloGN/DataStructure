@@ -55,7 +55,6 @@ void DynamicStack::Push(Data dt)
 
 Data DynamicStack::Pop()
 {
-
     if (IsEmpty())
     {
         return Data();
