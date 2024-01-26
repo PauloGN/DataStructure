@@ -14,13 +14,14 @@ Stack::~Stack()
 
 bool Stack::IsEmpty() const
 {
-    _ASSERT(size >= 0 && size <= MAX_SIZE, "size less then zero memory violetion");
+    _ASSERT(size >= 0 && size <= MAX_SIZE, "size has an odd value possible memory violetion");
 
-    return size == 0;
+    return (size == 0);
 }
 
 bool Stack::IsFull()
 {
+    //means size is now same index representation as MAX_SIZE so it is full other wize it would be a memory violation
     if (size == MAX_SIZE)
     {
         return true;

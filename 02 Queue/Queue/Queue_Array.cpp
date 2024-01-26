@@ -7,7 +7,6 @@ Queue_Array::Queue_Array()
     rear = 0;
 
     dataStruct = new data[MAX_ITEM];
-
 }
 
 Queue_Array::~Queue_Array()
@@ -15,16 +14,12 @@ Queue_Array::~Queue_Array()
     delete[]dataStruct;
 }
 
-bool Queue_Array::IsFull()
+bool Queue_Array::IsFull() const
 {
-    if (rear - first == MAX_ITEM)
-    {
-        return true;
-    }
-    return false;
+    return (rear - first == MAX_ITEM);
 }
 
-bool Queue_Array::IsEmpty()
+bool Queue_Array::IsEmpty() const
 {
     if (first == rear)
     {
@@ -45,14 +40,13 @@ data Queue_Array::Pop()
     return tempData;
 }
 
-int Queue_Array::Length()
+int Queue_Array::Length() const
 {
     return rear - first;
 }
 
-void Queue_Array::Print()
+void Queue_Array::Print() const
 {
-
     if (IsEmpty())
     {
         return;

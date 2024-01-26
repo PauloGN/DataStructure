@@ -1,7 +1,7 @@
 #pragma once
 
 typedef int data;
-const int MAX_ITEM = 25;
+constexpr int MAX_ITEM = 25;
 
 class Queue_Array
 {
@@ -16,12 +16,11 @@ public:
 	Queue_Array();
 	~Queue_Array();
 
-	bool IsFull();
-	bool IsEmpty();
+	bool IsFull() const;
+	bool IsEmpty() const;
 
 	void Push(const data item);
 	data Pop();
-	int Length();
-	void Print();
+	int Length() const;
+	void Print() const;
 };
-

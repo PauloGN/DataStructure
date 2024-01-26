@@ -39,16 +39,15 @@ bool DynamicStack::IsFull()
 
 void DynamicStack::Push(Data dt)
 {
-
     if (IsFull())
     {
         return;
     }
 
     Node* newNode = new Node();
-
     newNode->dt = dt;
     newNode->next = top;
+
     top = newNode;
     size++;
 }
@@ -71,7 +70,7 @@ Data DynamicStack::Pop()
 
 void DynamicStack::Print()
 {
-    Node* NodeToPrint = top;
+	const Node* NodeToPrint = top;
     std::cout << "Dymanic Stack [ ";
 
     while (NodeToPrint != nullptr)
