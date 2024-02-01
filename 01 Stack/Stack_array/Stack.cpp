@@ -15,7 +15,6 @@ Stack::~Stack()
 bool Stack::IsEmpty() const
 {
     _ASSERT(size >= 0 && size <= MAX_SIZE, "size has an odd value possible memory violetion");
-
     return (size == 0);
 }
 
@@ -38,6 +37,7 @@ void Stack::Push(const data item)
 data Stack::Pop()
 {
     if (IsEmpty()){return data{};}
+
     data temp = stack_dat[--size];
     return temp;
 }

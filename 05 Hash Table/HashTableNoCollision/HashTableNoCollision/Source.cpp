@@ -6,10 +6,8 @@
 
 int main()
 {
-
 	//variables
 	int op{ 0 };
-
 
 	std::cout << "Please enter the initial size of the data structure:\n";
 	std::cout << "-> ";
@@ -124,9 +122,6 @@ int main()
 		system("cls");
 
 	} while (is_running);
-
-
-
 
 	return 0;
 }

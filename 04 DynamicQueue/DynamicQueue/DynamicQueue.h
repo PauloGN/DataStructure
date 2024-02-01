@@ -17,7 +17,7 @@ public:
 	~DynamicQueue();
 	bool IsFull();
 	bool IsEmpty();
-	void Push(data rhs);
+	void Push(data data);
 	data Pop();
 	void Print();
 	int Length();
@@ -27,6 +27,5 @@ private:
 	Node* first;//remove
 	Node* rear;//add
 	int size;
-
 };
 

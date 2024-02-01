@@ -4,8 +4,10 @@
 class Student;
 
 /*
-  Fator de carga é a quantidade de elementos dividido pela maximo de itens a serem inseridos;
-  max elements X Max pos
+* Max_Items is the maximun of items to be added
+* Max_Pos is the size of memory alocation
+* 
+* Load factor is the amount of elements divided by the max pos
 */
 
 class Hash
@@ -37,6 +39,4 @@ public:
 
 	float GetLoadFactor() const { return static_cast<float>( Max_Items /(float) Max_Pos);}
 
-
 };
-

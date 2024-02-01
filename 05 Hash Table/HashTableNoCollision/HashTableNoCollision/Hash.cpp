@@ -67,7 +67,7 @@ int Hash::Size()
 void Hash::Push(Student student)
 {
 
-	int idex = HashFunction(student);
+	const int idex = HashFunction(student);
 	DataStructure[idex] = student;
 	Items_Amount++;
 
@@ -76,13 +76,13 @@ void Hash::Push(Student student)
 Student Hash::Pop(Student student)
 {
 
-	int idex = HashFunction(student);
-	Student sd, sdReturned;
+	const int idex = HashFunction(student);
+	Student sdVoid, sdReturned;
 	
 	if (DataStructure[idex].GetRN() != "void" && DataStructure[idex].GetRN() == student.GetRN())
 	{
 		sdReturned = DataStructure[idex];
-		DataStructure[idex] = sd;
+		DataStructure[idex] = sdVoid;
 		Items_Amount--;
 	}
 
@@ -92,7 +92,7 @@ Student Hash::Pop(Student student)
 void Hash::Search(Student& student, bool& search)
 {
 
-	int idex = HashFunction(student);
+	const int idex = HashFunction(student);
 
 	if (DataStructure[idex].GetRN() == student.GetRN())
 	{
@@ -106,7 +106,6 @@ void Hash::Search(Student& student, bool& search)
 
 void Hash::Print()
 {
-
 	std::cout << "\t\t========== Hash Table No Collision==========\n";
 
 	for (size_t i = 0; i < Max_Pos; i++)

@@ -15,7 +15,4 @@ public:
 	std::string GetRN()const{ return RN; }
 	std::string GetName(){ return Name;}
 	void Print();
-
-
 };
-

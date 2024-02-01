@@ -6,12 +6,10 @@ DynamicQueue::DynamicQueue():first(nullptr), rear(nullptr), size (0)
 
 DynamicQueue::~DynamicQueue()
 {
-
 	Node* Temp = first;
 
 	while (first != nullptr)
 	{
-
 		Temp = first;
 		first = first->next;
 		delete Temp;
@@ -38,7 +36,7 @@ bool DynamicQueue::IsEmpty()
 	return first == nullptr;
 }
 
-void DynamicQueue::Push(data rhs)
+void DynamicQueue::Push(data data)
 {
 
 	if (IsFull())
@@ -48,7 +46,7 @@ void DynamicQueue::Push(data rhs)
 	}
 
 	Node* newNode = new Node();
-	newNode->dt = rhs;
+	newNode->dt = data;
 	newNode->next = nullptr;
 
 	if (first == nullptr)
@@ -62,7 +60,6 @@ void DynamicQueue::Push(data rhs)
 
 	rear = newNode;
 	size++;
-
 }
 
 data DynamicQueue::Pop()
@@ -85,7 +82,6 @@ data DynamicQueue::Pop()
 	delete tempDestroy;
 	size--;
 	return returnValue;
-
 }
 
 void DynamicQueue::Print()
