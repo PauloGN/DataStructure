@@ -6,7 +6,7 @@ DynamicQueue::DynamicQueue():first(nullptr), rear(nullptr), size (0)
 
 DynamicQueue::~DynamicQueue()
 {
-	Node* Temp = first;
+	const Node* Temp = first;
 
 	while (first != nullptr)
 	{
@@ -16,6 +16,83 @@ DynamicQueue::~DynamicQueue()
 	}
 	rear = nullptr;
 }
+
+DynamicQueue::DynamicQueue(const DynamicQueue& other)
+{
+	size = other.size;
+	first = nullptr;
+	rear = nullptr;
+
+	const Node* nodeToClone = other.first;
+
+	while (nodeToClone != nullptr)
+	{
+		Node* newNode = new Node();
+		newNode->dt = nodeToClone->dt;
+		newNode->next = nullptr;
+
+		if (first == nullptr)
+		{
+			first = newNode;
+		}
+		else
+		{
+			rear->next = newNode;
+		}
+
+		rear = newNode;
+		nodeToClone = nodeToClone->next;
+	}
+}
+
+DynamicQueue& DynamicQueue::operator=(const DynamicQueue& other)
+{
+
+	if(this == &other)
+	{
+		return *this;
+	}
+
+	if(first != nullptr)
+	{
+		const Node* nodeToDelete = first;
+		while (first !=nullptr)
+		{
+			first = first->next;
+			delete nodeToDelete;
+			nodeToDelete = first;
+		}
+
+		first = nullptr;
+		rear = nullptr;
+	}
+
+	size = other.size;
+
+	const Node* nodeToClone = other.first;
+
+	while (nodeToClone != nullptr)
+	{
+		Node* newNode = new Node();
+		newNode->dt = nodeToClone->dt;
+		newNode->next = nullptr;
+
+		if (first == nullptr)
+		{
+			first = newNode;
+		}
+		else
+		{
+			rear->next = newNode;
+		}
+
+		rear = newNode;
+		nodeToClone = nodeToClone->next;
+	}
+
+	return *this;
+}
+
 
 bool DynamicQueue::IsFull()
 {

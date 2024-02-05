@@ -25,5 +25,5 @@ public:
 	void Push(Data dt);
 	Data Pop();
 	void Print();
-	int Lengh();
+	int Lengh() const;
 };

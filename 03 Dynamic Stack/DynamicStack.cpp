@@ -8,7 +8,7 @@ DynamicStack::DynamicStack()
 
 DynamicStack::~DynamicStack()
 {
-    Node* NodeToDestroy = nullptr;
+	const Node* NodeToDestroy = nullptr;
 
     while (top != nullptr)
     {
@@ -27,7 +27,7 @@ bool DynamicStack::IsFull()
 {
     try
     {
-        Node* testNode = new Node();
+	    const Node* testNode = new Node();
         delete testNode;
         return false;
     }
@@ -59,7 +59,7 @@ Data DynamicStack::Pop()
         return Data();
     }
 
-    Data tempData = std::move(top->dt);
+    const Data tempData = std::move(top->dt);
 
     Node* NodeToDestroy = top;
     top = top->next;
@@ -81,7 +81,7 @@ void DynamicStack::Print()
     std::cout << "]\n";
 }
 
-int DynamicStack::Lengh()
+int DynamicStack::Lengh() const
 {
     return size;
 }
